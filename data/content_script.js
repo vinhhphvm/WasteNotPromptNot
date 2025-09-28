@@ -250,7 +250,7 @@ function ensureModal() {
   wrap.innerHTML = `
     <div class="ph-modal" role="dialog" aria-modal="true" aria-labelledby="ph-title" aria-describedby="ph-desc" tabindex="-1">
       <h3 id="ph-title" class="ph-modal-title">This prompt looks wasteful</h3>
-      <p id="ph-desc" class="ph-modal-desc">We detected filler (e.g., “please”, “thanks”, hedges). Clear it before sending?</p>
+      <p id="ph-desc" class="ph-modal-desc">We detected this prompt is unnecessary and a waste of computation. Clear it before sending?</p>
       <div class="ph-modal-stats">
         <span class="ph-pill" id="ph-removed"></span>
         <span class="ph-pill" id="ph-tokens"></span>
