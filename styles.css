@@ -1,0 +1,137 @@
+/* Refresh Basic*/
+body.ph-popup {
+  margin: 0;
+  padding: 16px;
+  font-family: "Segoue UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  width: 320px;
+  box-sizing: border-box;
+}
+
+/* Title */
+.ph-popup h2 {
+  margin-top: 0;
+  font-size: 18px;
+  text-align: center;
+  color: #222;
+}
+
+/* Floating badge near the editor */
+.ph-badge {
+  position: fixed; /* stable relative to viewport */
+  z-index: 2147483647;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: rgba(20, 20, 20, 0.95);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font: 12px/1.2 system-ui, sans-serif;
+  pointer-events: auto;
+}
+
+.ph-badge .ph-clean {
+  background: #fff;
+  color: #111;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ph-badge .ph-close {
+  background: transparent;
+  border: none;
+  color: #bbb;
+  font-size: 14px;
+  margin-left: 2px;
+  padding: 0 4px;
+  cursor: pointer;
+}
+
+.ph-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: none; /* shown via JS */
+  align-items: center;
+  justify-content: center;
+  background: rgba(17, 17, 17, 0.45);
+  z-index: 2147483647;
+}
+
+/* The dialog box */
+.ph-modal {
+  background: #fff;
+  color: #111;
+  width: 360px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  padding: 16px;
+  outline: none;
+  font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.ph-modal-title {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+}
+
+.ph-modal-desc {
+  margin: 0 0 10px 0;
+  color: #444;
+}
+
+/* Little stat pills (removed chars / tokens) */
+.ph-modal-stats {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.ph-pill {
+  background: #eef;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+/* Buttons row */
+.ph-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.ph-btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  cursor: pointer;
+}
+.ph-primary {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+.ph-link {
+  background: transparent;
+  border: none;
+  color: #555;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Nice-to-have: reduce motion for users who prefer it */
+@media (prefers-reduced-motion: no-preference) {
+  .ph-badge,
+  .ph-modal {
+    transition: transform 0.12s ease, opacity 0.12s ease;
+  }
+}

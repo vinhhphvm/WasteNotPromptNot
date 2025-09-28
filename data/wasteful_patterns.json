@@ -1,0 +1,50 @@
+[
+  {
+    "id": "polite-thanks",
+    "pattern": "\\b(thanks|thank\\s*you|ty)\\b[\\s!,.]*",
+    "flags": "gi",
+    "explain": "Politeness not needed"
+  },
+  {
+    "id": "please",
+    "pattern": "\\b(please|kindly)\\b[\\s,]*",
+    "flags": "gi",
+    "explain": "Politeness not needed"
+  },
+  {
+    "id": "hedges",
+    "pattern": "\\b(if\\s+possible|when\\s+you\\s+can|at\\s+your\\s+earliest\\s+convenience)\\b[\\s,]*",
+    "flags": "gi",
+    "explain": "Hedging adds length"
+  },
+  {
+    "id": "verbose-openers",
+    "pattern": "\\b(I\\s+would\\s+like\\s+to|I\\s+was\\s+wondering\\s+if|could\\s+you|would\\s+you\\s+be\\s+able\\s+to)\\b[\\s,]*",
+    "flags": "gi",
+    "explain": "Verbose opener"
+  },
+  {
+    "id": "greetings",
+    "pattern": "^\\s*(hi|hello|hey|dear\\s+(chatgpt|claude|gemini))\\s*,?\\n?",
+    "flags": "gim",
+    "explain": "Greeting not needed"
+  },
+  {
+    "id": "closers",
+    "pattern": "(?:\\n|^)\\s*(best\\s+regards|sincerely|thanks|thank\\s*you)\\.?\\s*$",
+    "flags": "gi",
+    "explain": "Sign-off not needed"
+  },
+  {
+    "id": "excess-punct",
+    "pattern": "([!?])\\1{1,}",
+    "flags": "g",
+    "explain": "Excess punctuation"
+  },
+  {
+    "id": "sanity-hello",
+    "pattern": "\\bhello\\b",
+    "flags": "gi",
+    "explain": "Sanity check: matched 'hello'"
+  }
+]

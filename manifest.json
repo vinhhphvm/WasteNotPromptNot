@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Prompt Hygiene (MVP)",
+  "version": "0.1.0",
+  "description": "Flags unnecessary filler in LLM prompts and estimates token savings.",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Prompt Hygiene"
+  },
+  "icons": {
+    "128": "data/logo.png"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://computesimilarity-tz4nnskwtq-uc.a.run.app/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["data/content_script.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["data/wasteful_patterns.json"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "commands": {
+    "clean-current": {
+      "suggested_key": { "default": "Alt+Shift+K" },
+      "description": "Clean the currently focused editor"
+    }
+  }
+}
